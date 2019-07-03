@@ -22,7 +22,8 @@ UserSchema.pre('save', function(){
   });
 
 
-  UserSchema.plugin(passportLocalMongoose);
+  //UserSchema.plugin(passportLocalMongoose);
+  UserSchema.plugin(passportLocalMongoose, { usernameField : 'email' });
   
 var User = mongoose.model("User", UserSchema);
 
